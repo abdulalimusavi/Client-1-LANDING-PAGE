@@ -15,6 +15,7 @@
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
+  <!-- ===== SEPARATE CSS ===== -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -29,8 +30,6 @@
     <!-- HERO -->
     <section class="hero">
       <div class="brand-tag">BRANDFX360</div>
-
-    
 
       <h1 class="glitch-text">DO YOU FREEZE<br />WHEN IT'S TIME TO SPEAK?</h1>
 
@@ -54,12 +53,14 @@
         </div>
       </div>
 
-      <!-- CTA -->
+      <!-- CTA — BOTH buttons use the same WhatsApp number -->
       <div class="cta-group">
-        <a href="03359522773" target="_blank"
+        <!-- Register Now → WhatsApp -->
+        <a href="https://wa.me/923359522773?text=I%20want%20to%20register%20for%20the%20course" target="_blank"
           class="btn-primary">
           <i class="fab fa-whatsapp"></i> REGISTER NOW
         </a>
+        <!-- Play Intro → scrolls to video -->
         <a href="#video" class="btn-secondary">
           <i class="fas fa-play"></i> PLAY INTRO
         </a>
@@ -79,8 +80,11 @@
           <button class="play-big" id="playBtn">
             <i class="fas fa-play"></i>
           </button>
-
-
+        </div>
+      </div>
+      <div class="video-note">
+        <i class="fas fa-volume-up"></i> Audio enabled — tap play to start
+      </div>
     </section>
 
     <!-- WHAT YOU'LL LEARN -->
@@ -232,9 +236,9 @@
       </div>
     </div>
 
-    <!-- FLOATING WHATSAPP -->
+    <!-- FLOATING WHATSAPP — same number -->
     <div class="float-wa">
-      <a href="https://wa.me/923395922773?text=I%20want%20to%20register%20for%20the%20course" target="_blank"
+      <a href="https://wa.me/923359522773?text=I%20want%20to%20register%20for%20the%20course" target="_blank"
         title="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
       </a>
@@ -242,7 +246,9 @@
 
   </main>
 
-  <!-- ===== JAVASCRIPT - AUDIO FIX ===== -->
+  <!-- ============================================================
+  JAVASCRIPT — VIDEO + AUDIO FIX (embedded)
+  ============================================================ -->
   <script>
     (function () {
       'use strict';
@@ -252,18 +258,14 @@
       const playBtn = document.getElementById('playBtn');
       const container = document.getElementById('videoContainer');
 
+      // ------------------------------------------------------------------
       // AGGRESSIVE AUDIO SETUP
+      // ------------------------------------------------------------------
       function setupAudio() {
         if (!video) return;
-
-        // Remove any mute attribute
         video.removeAttribute('muted');
         video.muted = false;
-
-        // Set volume to max
         video.volume = 1.0;
-
-        // Log for debugging
         console.log('🔊 AUDIO SETUP:', {
           muted: video.muted,
           volume: video.volume,
@@ -271,35 +273,36 @@
         });
       }
 
-      // Run on load
       if (video.readyState >= video.HAVE_METADATA) {
         setupAudio();
       }
       video.addEventListener('loadedmetadata', setupAudio);
 
-      // PLAY FUNCTION
+      // ------------------------------------------------------------------
+      // PLAY
+      // ------------------------------------------------------------------
       function playVideo() {
         if (!video) return;
+        setupAudio();
 
-        setupAudio(); // Ensure audio again
-
-        const playPromise = video.play();
-
-        if (playPromise !== undefined) {
-          playPromise
+        const promise = video.play();
+        if (promise !== undefined) {
+          promise
             .then(() => {
               console.log('✅ Video playing with audio');
               overlay.classList.add('hidden');
             })
-            .catch((error) => {
-              console.error('❌ Play error:', error);
-              alert('Click the play button in the video controls to start');
+            .catch((err) => {
+              console.error('❌ Play error:', err);
+              alert('Tap the play button on the video controls to start.');
             });
         }
       }
 
-      // PAUSE FUNCTION
-      function pauseVideo() {
+      // ------------------------------------------------------------------
+      // TOGGLE
+      // ------------------------------------------------------------------
+      function togglePlay() {
         if (video.paused) {
           playVideo();
         } else {
@@ -308,59 +311,69 @@
         }
       }
 
+      // ------------------------------------------------------------------
       // EVENT LISTENERS
+      // ------------------------------------------------------------------
       if (playBtn) {
-        playBtn.addEventListener('click', (e) => {
+        playBtn.addEventListener('click', function (e) {
           e.stopPropagation();
           playVideo();
         });
       }
 
-      overlay?.addEventListener('click', (e) => {
+      overlay.addEventListener('click', function (e) {
         if (e.target.closest('.play-big') || e.target === overlay) {
           playVideo();
         }
       });
 
-      video.addEventListener('play', () => {
+      video.addEventListener('play', function () {
         overlay.classList.add('hidden');
-        setupAudio(); // Keep ensuring audio during playback
+        setupAudio();
       });
 
-      video.addEventListener('pause', () => {
+      video.addEventListener('pause', function () {
         overlay.classList.remove('hidden');
       });
 
-      video.addEventListener('ended', () => {
+      video.addEventListener('ended', function () {
         overlay.classList.remove('hidden');
         video.currentTime = 0;
       });
 
-      // Smooth scroll to video with autoplay
-      document.querySelector('a[href="#video"]')?.addEventListener('click', (e) => {
+      // ------------------------------------------------------------------
+      // SMOOTH SCROLL TO VIDEO + AUTOPLAY
+      // ------------------------------------------------------------------
+      document.querySelector('a[href="#video"]')?.addEventListener('click', function (e) {
         e.preventDefault();
         document.getElementById('video').scrollIntoView({ behavior: 'smooth', block: 'start' });
-        setTimeout(() => {
+        setTimeout(function () {
           if (video && video.paused) {
             playVideo();
           }
         }, 800);
       });
 
-      // Volume control - keep at max unless user changes
-      video.addEventListener('volumechange', () => {
-        console.log('📊 Volume changed to:', video.volume);
-      });
-
-      // Handle visibility
-      document.addEventListener('visibilitychange', () => {
+      // ------------------------------------------------------------------
+      // VISIBILITY: pause when tab hidden
+      // ------------------------------------------------------------------
+      document.addEventListener('visibilitychange', function () {
         if (document.hidden && !video.paused) {
           video.pause();
         }
       });
 
-      // IMPORTANT: iOS audio fix - requires user gesture first
+      // ------------------------------------------------------------------
+      // iOS / mobile: one user gesture to unlock audio
+      // ------------------------------------------------------------------
       document.addEventListener('click', setupAudio, { once: true });
+
+      // ------------------------------------------------------------------
+      // LOG VOLUME CHANGES (debug)
+      // ------------------------------------------------------------------
+      video.addEventListener('volumechange', function () {
+        console.log('📊 Volume changed to:', video.volume);
+      });
 
     })();
   </script>
