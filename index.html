@@ -4,18 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. Javeria Shabbir – Speak with Confidence | BrandFix360</title>
-
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-
+  <!-- Separate CSS file -->
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
   <!-- Background -->
@@ -24,58 +21,38 @@
 
   <main class="container">
 
-    <!-- HERO -->
+    <!-- ========== HERO ========== -->
     <section class="hero">
       <div class="brand-tag">BRANDFX360</div>
-
-      
-
       <h1 class="glitch-text">DO YOU FREEZE<br />WHEN IT'S TIME TO SPEAK?</h1>
-
       <p class="sub-headline">
         <i class="fas fa-exclamation-circle"></i> Boost confidence. Crack presentations. Master interviews.
       </p>
 
-      <!-- PRICE -->
-      <div class="price-box">
-        <div class="price-item">
-          <span class="label">REGULAR</span>
-          <span class="old-price">₨10,000</span>
+      <!-- COUNTDOWN TIMER ONLY -->
+      <div class="hero-timer-wrapper">
+        <div class="countdown-label">
+          <i class="fas fa-hourglass-end"></i> OFFER ENDS IN
         </div>
-        <div class="price-divider"></div>
-        <div class="price-item highlight">
-          <span class="label">EARLY BIRD</span>
-          <span class="new-price">₨4,999</span>
-        </div>
-        <div class="price-seats">
-          <i class="fas fa-chair"></i> ONLY 10 SEATS
-        </div>
-
-        <!-- COUNTDOWN TIMER -->
-        <div class="countdown-wrapper">
-          <div class="countdown-label">
-            <i class="fas fa-hourglass-end"></i> OFFER ENDS IN
+        <div class="countdown-timer" id="countdownTimer">
+          <div class="countdown-item">
+            <div class="countdown-number" id="days">0</div>
+            <div class="countdown-label-small">DAYS</div>
           </div>
-          <div class="countdown-timer" id="countdownTimer">
-            <div class="countdown-item">
-              <div class="countdown-number" id="days">0</div>
-              <div class="countdown-label-small">DAYS</div>
-            </div>
-            <div class="countdown-separator">:</div>
-            <div class="countdown-item">
-              <div class="countdown-number" id="hours">0</div>
-              <div class="countdown-label-small">HOURS</div>
-            </div>
-            <div class="countdown-separator">:</div>
-            <div class="countdown-item">
-              <div class="countdown-number" id="minutes">0</div>
-              <div class="countdown-label-small">MINS</div>
-            </div>
-            <div class="countdown-separator">:</div>
-            <div class="countdown-item">
-              <div class="countdown-number" id="seconds">0</div>
-              <div class="countdown-label-small">SECS</div>
-            </div>
+          <div class="countdown-separator">:</div>
+          <div class="countdown-item">
+            <div class="countdown-number" id="hours">0</div>
+            <div class="countdown-label-small">HOURS</div>
+          </div>
+          <div class="countdown-separator">:</div>
+          <div class="countdown-item">
+            <div class="countdown-number" id="minutes">0</div>
+            <div class="countdown-label-small">MINS</div>
+          </div>
+          <div class="countdown-separator">:</div>
+          <div class="countdown-item">
+            <div class="countdown-number" id="seconds">0</div>
+            <div class="countdown-label-small">SECS</div>
           </div>
         </div>
       </div>
@@ -91,7 +68,7 @@
       </div>
     </section>
 
-    <!-- VIDEO SECTION - AUDIO ENABLED -->
+    <!-- ========== VIDEO ========== -->
     <section class="video-section" id="video">
       <div class="video-label">INTRO VIDEO • FULL AUDIO</div>
       <div class="video-container" id="videoContainer">
@@ -99,7 +76,6 @@
           <source src="Video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-
         <div class="video-overlay" id="videoOverlay">
           <button class="play-big" id="playBtn">
             <i class="fas fa-play"></i>
@@ -111,7 +87,7 @@
       </div>
     </section>
 
-    <!-- SOCIAL PROOF STATS -->
+    <!-- ========== SOCIAL PROOF ========== -->
     <section class="social-proof">
       <div class="proof-content">
         <i class="fas fa-fire"></i>
@@ -120,34 +96,46 @@
       </div>
     </section>
 
-    <!-- WHAT YOU'LL LEARN -->
-    <section class="learning-section">
+    <!-- ========== WHAT YOU'LL MASTER (with BOOK SESSION buttons) ========== -->
+    <section class="learning-section" id="learningSection">
       <h2>What You'll Master</h2>
       <div class="learning-grid">
         <div class="learning-item">
           <i class="fas fa-headset"></i>
           <h4>Speak with Authority</h4>
           <p>Command any room with confidence & presence</p>
+          <button class="btn-book" data-target="packagesSection">
+            <i class="fas fa-calendar-check"></i> BOOK SESSION
+          </button>
         </div>
         <div class="learning-item">
           <i class="fas fa-heart"></i>
           <h4>Build Emotional Intelligence</h4>
           <p>Understand & connect with your audience</p>
+          <button class="btn-book" data-target="packagesSection">
+            <i class="fas fa-calendar-check"></i> BOOK SESSION
+          </button>
         </div>
         <div class="learning-item">
           <i class="fas fa-shield-alt"></i>
           <h4>Overcome Stage Fear</h4>
           <p>Transform nervousness into unstoppable confidence</p>
+          <button class="btn-book" data-target="packagesSection">
+            <i class="fas fa-calendar-check"></i> BOOK SESSION
+          </button>
         </div>
         <div class="learning-item">
           <i class="fas fa-handshake"></i>
           <h4>Win Interviews & Presentations</h4>
           <p>Answer perfectly under pressure & impress</p>
+          <button class="btn-book" data-target="packagesSection">
+            <i class="fas fa-calendar-check"></i> BOOK SESSION
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- FEATURES -->
+    <!-- ========== FEATURES ========== -->
     <section class="features">
       <div class="feature">
         <div class="feature-number">01</div>
@@ -175,85 +163,172 @@
       </div>
     </section>
 
-    <!-- ABOUT BRANDFX360 -->
+    <!-- ========== ABOUT + INSTRUCTOR CREDIBILITY ========== -->
     <section class="about-section">
       <div class="about-content">
         <h2>About BrandFix360</h2>
         <p>BrandFix360 is a training & consulting company specializing in <strong>Public Speaking, Leadership, Emotional Intelligence & Communication</strong>. We transform how professionals and entrepreneurs connect, influence and lead.</p>
         <p>Whether you're a student preparing for interviews, a professional seeking leadership impact, or an organization needing team training—we deliver proven, practical strategies that get results.</p>
 
+        <!-- Instructor Credibility -->
+        <div class="about-instructor">
+          <div class="instructor-avatar">JS</div>
+          <div class="instructor-info">
+            <h3>Dr. Javeria Shabbir</h3>
+            <div class="title-role">Founder — BrandFix360 | Public Speaking & Leadership Coach</div>
+            <p>
+              With a doctorate in Communication & Leadership, Dr. Javeria Shabbir has trained <strong>5,000+ professionals and students</strong> across Pakistan and beyond. Her mission is to help individuals break free from stage fear, speak with unstoppable confidence, and become influential leaders in their fields. She combines academic rigour with real-world practicality — making every session transformative and actionable.
+            </p>
+          </div>
+        </div>
+
         <div class="programs-list">
           <h3>Our Programs Include:</h3>
           <div class="programs-grid">
-            <div class="program-item">
-              <i class="fas fa-graduation-cap"></i>
-              <span>Public Speaking</span>
-            </div>
-            <div class="program-item">
-              <i class="fas fa-briefcase"></i>
-              <span>Leadership Training</span>
-            </div>
-            <div class="program-item">
-              <i class="fas fa-users"></i>
-              <span>Relationship Intelligence</span>
-            </div>
-            <div class="program-item">
-              <i class="fas fa-star"></i>
-              <span>Personal Branding</span>
-            </div>
-            <div class="program-item">
-              <i class="fas fa-handshake"></i>
-              <span>Interview Mastery</span>
-            </div>
-            <div class="program-item">
-              <i class="fas fa-robot"></i>
-              <span>AI Productivity</span>
-            </div>
+            <div class="program-item"><i class="fas fa-graduation-cap"></i><span>Public Speaking</span></div>
+            <div class="program-item"><i class="fas fa-briefcase"></i><span>Leadership Training</span></div>
+            <div class="program-item"><i class="fas fa-users"></i><span>Relationship Intelligence</span></div>
+            <div class="program-item"><i class="fas fa-star"></i><span>Personal Branding</span></div>
+            <div class="program-item"><i class="fas fa-handshake"></i><span>Interview Mastery</span></div>
+            <div class="program-item"><i class="fas fa-robot"></i><span>AI Productivity</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- GUARANTEES -->
+    <!-- ========== PACKAGES SECTION ========== -->
+    <section class="packages-section" id="packagesSection">
+      <div class="section-label"><i class="fas fa-tags"></i> CHOOSE YOUR PATH</div>
+      <h2>Select Your Package</h2>
+      <p class="packages-sub">Pick the plan that fits your goals — from students to executives, we've got you covered.</p>
+
+      <div class="packages-grid">
+        <!-- Starter -->
+        <div class="package-card">
+          <div class="pkg-badge">STARTER</div>
+          <div class="pkg-icon"><i class="fas fa-user-graduate"></i></div>
+          <div class="pkg-name">Starter</div>
+          <div class="pkg-audience">🎯 Students</div>
+          <div class="pkg-desc">Workshop + comprehensive notes to build your foundation.</div>
+          <div class="pkg-price">₨ 5,000 <small>PKR</small></div>
+          <a href="https://wa.me/923359522773?text=I%20want%20to%20book%20the%20STARTER%20package%20(%205,000%20PKR)" target="_blank" class="btn-pkg">
+            <i class="fab fa-whatsapp"></i> BOOK NOW
+          </a>
+        </div>
+
+        <!-- Professional -->
+        <div class="package-card featured">
+          <div class="pkg-badge">PROFESSIONAL</div>
+          <div class="pkg-icon"><i class="fas fa-briefcase"></i></div>
+          <div class="pkg-name">Professional</div>
+          <div class="pkg-audience">💼 Professionals</div>
+          <div class="pkg-desc">Full course + 1-on-1 coaching to accelerate your career.</div>
+          <div class="pkg-price">₨ 15,000 <small>PKR</small></div>
+          <a href="https://wa.me/923359522773?text=I%20want%20to%20book%20the%20PROFESSIONAL%20package%20(%2015,000%20PKR)" target="_blank" class="btn-pkg">
+            <i class="fab fa-whatsapp"></i> BOOK NOW
+          </a>
+        </div>
+
+        <!-- Executive -->
+        <div class="package-card">
+          <div class="pkg-badge">EXECUTIVE</div>
+          <div class="pkg-icon"><i class="fas fa-users-cog"></i></div>
+          <div class="pkg-name">Executive</div>
+          <div class="pkg-audience">📊 Managers</div>
+          <div class="pkg-desc">Leadership training + personal branding mastery.</div>
+          <div class="pkg-price">₨ 30,000 <small>PKR</small></div>
+          <a href="https://wa.me/923359522773?text=I%20want%20to%20book%20the%20EXECUTIVE%20package%20(%2030,000%20PKR)" target="_blank" class="btn-pkg">
+            <i class="fab fa-whatsapp"></i> BOOK NOW
+          </a>
+        </div>
+
+        <!-- Elite -->
+        <div class="package-card">
+          <div class="pkg-badge">ELITE</div>
+          <div class="pkg-icon"><i class="fas fa-crown"></i></div>
+          <div class="pkg-name">Elite Leadership</div>
+          <div class="pkg-audience">👔 Executives & Boardroom</div>
+          <div class="pkg-desc">VIP coaching, strategy & high-stakes communication.</div>
+          <div class="pkg-price">₨ 50,000 <small>PKR</small></div>
+          <a href="https://wa.me/923359522773?text=I%20want%20to%20book%20the%20ELITE%20package%20(%2050,000%20PKR)" target="_blank" class="btn-pkg">
+            <i class="fab fa-whatsapp"></i> BOOK NOW
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SPECIAL SESSION NOTICE ========== -->
+    <section class="special-session">
+      <i class="fas fa-users ss-icon"></i>
+      <h3>🔥 40 Students — Next Session Unlocked!</h3>
+      <p>
+        When we reach <strong>40 registered students</strong>, we launch an <strong>additional session</strong> exclusively for early birds.
+        <br />
+        <span class="ss-highlight">Pre‑book your seat for just ₨ 500</span> — and we'll automatically reserve your spot in the next session.
+      </p>
+      <div class="ss-badge">
+        <i class="fas fa-check-circle"></i> Pay ₨ 500 now • Guaranteed seat in next session
+      </div>
+      <div style="margin-top: 18px;">
+        <a href="https://wa.me/923359522773?text=I%20want%20to%20pre-book%20the%20next%20session%20(%20500%20PKR)" target="_blank" class="btn-primary" style="padding: 12px 36px; font-size: 0.9rem;">
+          <i class="fab fa-whatsapp"></i> PRE-BOOK FOR ₨ 500
+        </a>
+      </div>
+    </section>
+
+    <!-- ========== PAYMENT METHODS ========== -->
+    <section class="payment-section" id="paymentSection">
+      <h2>💳 Easy Payments</h2>
+      <p class="pay-sub">Choose your preferred method and send your payment screenshot to confirm your seat.</p>
+
+      <div class="payment-methods">
+        <div class="payment-method">
+          <i class="fas fa-mobile-alt"></i>
+          <div class="pm-name">Easypaisa <small>0345 1234567</small></div>
+        </div>
+        <div class="payment-method">
+          <i class="fas fa-mobile-alt"></i>
+          <div class="pm-name">JazzCash <small>0345 1234567</small></div>
+        </div>
+        <div class="payment-method">
+          <i class="fas fa-wallet"></i>
+          <div class="pm-name">Upaisa <small>0345 1234567</small></div>
+        </div>
+      </div>
+
+      <div class="payment-note">
+        <p>
+          <i class="fas fa-info-circle" style="color: #ffc107; margin-right: 8px;"></i>
+          <strong>Select a package</strong> above, send your payment screenshot via WhatsApp, and we'll <strong>automatically add you</strong> to the group.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== GUARANTEES ========== -->
     <div class="guarantees">
-      <div class="guarantee">
-        <i class="fas fa-shield-alt"></i>
-        <span>100% MONEY BACK GUARANTEE</span>
-      </div>
-      <div class="guarantee">
-        <i class="fas fa-heart"></i>
-        <span>50% DISCOUNT FOR ORPHANS</span>
-      </div>
+      <div class="guarantee"><i class="fas fa-shield-alt"></i><span>100% MONEY BACK GUARANTEE</span></div>
+      <div class="guarantee"><i class="fas fa-heart"></i><span>50% DISCOUNT FOR ORPHANS</span></div>
     </div>
 
-    <!-- EVENT INFO -->
+    <!-- ========== EVENT INFO ========== -->
     <div class="event-box">
       <div class="event-item">
         <i class="fas fa-calendar-check"></i>
-        <div>
-          <div class="event-label">DATE</div>
-          <div class="event-value">SUNDAY 19 JULY 2026</div>
-        </div>
+        <div><div class="event-label">DATE</div><div class="event-value">SUNDAY 19 JULY 2026</div></div>
       </div>
       <div class="event-divider"></div>
       <div class="event-item">
         <i class="fas fa-clock"></i>
-        <div>
-          <div class="event-label">TIME</div>
-          <div class="event-value">6:00 PM PKT</div>
-        </div>
+        <div><div class="event-label">TIME</div><div class="event-value">6:00 PM PKT</div></div>
       </div>
       <div class="event-divider"></div>
       <div class="event-item">
         <i class="fas fa-video"></i>
-        <div>
-          <div class="event-label">FORMAT</div>
-          <div class="event-value">LIVE & PRACTICAL</div>
-        </div>
+        <div><div class="event-label">FORMAT</div><div class="event-value">LIVE & PRACTICAL</div></div>
       </div>
     </div>
 
-    <!-- SOCIAL -->
+    <!-- ========== SOCIAL FOOTER ========== -->
     <div class="social-footer">
       <a href="https://instagram.com/drjaveriassshabbir" target="_blank" class="social-btn">
         <i class="fab fa-instagram"></i> Instagram
@@ -266,7 +341,7 @@
       </div>
     </div>
 
-    <!-- FLOATING WHATSAPP -->
+    <!-- ========== FLOATING WHATSAPP ========== -->
     <div class="float-wa">
       <a href="https://wa.me/923359522773?text=I%20want%20to%20register%20for%20the%20course" target="_blank" title="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
@@ -276,13 +351,13 @@
   </main>
 
   <!-- ============================================================
-  JAVASCRIPT — VIDEO + AUDIO + TIMER (embedded)
+  JAVASCRIPT — VIDEO + AUDIO + TIMER + BOOK BUTTONS
   ============================================================ -->
   <script>
     (function() {
       'use strict';
 
-      // ========== VIDEO AUDIO SECTION ==========
+      // ========== VIDEO & AUDIO ==========
       const video = document.getElementById('mainVideo');
       const overlay = document.getElementById('videoOverlay');
       const playBtn = document.getElementById('playBtn');
@@ -370,7 +445,7 @@
         console.log('📊 Volume changed to:', video.volume);
       });
 
-      // ========== COUNTDOWN TIMER SECTION ==========
+      // ========== COUNTDOWN TIMER ==========
       function initCountdownTimer() {
         const targetDate = new Date(2026, 6, 19, 0, 0, 0).getTime();
 
@@ -406,9 +481,21 @@
         initCountdownTimer();
       }
 
+      // ========== BOOK SESSION BUTTONS → SCROLL TO PACKAGES ==========
+      const bookBtns = document.querySelectorAll('.btn-book');
+      const packagesSection = document.getElementById('packagesSection');
+
+      bookBtns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          if (packagesSection) {
+            packagesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
     })();
   </script>
 
 </body>
-
 </html>
