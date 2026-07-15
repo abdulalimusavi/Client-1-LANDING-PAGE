@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,8 +8,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
@@ -30,7 +28,7 @@
     <section class="hero">
       <div class="brand-tag">BRANDFX360</div>
 
-
+      
 
       <h1 class="glitch-text">DO YOU FREEZE<br />WHEN IT'S TIME TO SPEAK?</h1>
 
@@ -84,8 +82,7 @@
 
       <!-- CTA -->
       <div class="cta-group">
-        <a href="https://wa.me/923359522773?text=I%20want%20to%20register%20for%20the%20course" target="_blank"
-          class="btn-primary">
+        <a href="https://wa.me/923359522773?text=I%20want%20to%20register%20for%20the%20course" target="_blank" class="btn-primary">
           <i class="fab fa-whatsapp"></i> REGISTER NOW
         </a>
         <a href="#video" class="btn-secondary">
@@ -111,6 +108,15 @@
       </div>
       <div class="video-note">
         <i class="fas fa-volume-up"></i> Audio enabled — tap play to start
+      </div>
+    </section>
+
+    <!-- SOCIAL PROOF STATS -->
+    <section class="social-proof">
+      <div class="proof-content">
+        <i class="fas fa-fire"></i>
+        <h3>250K+ Views in 30 Days on Instagram</h3>
+        <p>Join thousands transforming their confidence with Brandfx360</p>
       </div>
     </section>
 
@@ -173,11 +179,8 @@
     <section class="about-section">
       <div class="about-content">
         <h2>About BrandFix360</h2>
-        <p>BrandFix360 is a training & consulting company specializing in <strong>Public Speaking, Leadership, Emotional
-            Intelligence & Communication</strong>. We transform how professionals and entrepreneurs connect, influence
-          and lead.</p>
-        <p>Whether you're a student preparing for interviews, a professional seeking leadership impact, or an
-          organization needing team training—we deliver proven, practical strategies that get results.</p>
+        <p>BrandFix360 is a training & consulting company specializing in <strong>Public Speaking, Leadership, Emotional Intelligence & Communication</strong>. We transform how professionals and entrepreneurs connect, influence and lead.</p>
+        <p>Whether you're a student preparing for interviews, a professional seeking leadership impact, or an organization needing team training—we deliver proven, practical strategies that get results.</p>
 
         <div class="programs-list">
           <h3>Our Programs Include:</h3>
@@ -265,8 +268,7 @@
 
     <!-- FLOATING WHATSAPP -->
     <div class="float-wa">
-      <a href="https://wa.me/923359522773?text=I%20want%20to%20register%20for%20the%20course" target="_blank"
-        title="Chat on WhatsApp">
+      <a href="https://wa.me/923359522773?text=I%20want%20to%20register%20for%20the%20course" target="_blank" title="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
       </a>
     </div>
@@ -277,7 +279,7 @@
   JAVASCRIPT — VIDEO + AUDIO + TIMER (embedded)
   ============================================================ -->
   <script>
-    (function () {
+    (function() {
       'use strict';
 
       // ========== VIDEO AUDIO SECTION ==========
@@ -320,43 +322,43 @@
       }
 
       if (playBtn) {
-        playBtn.addEventListener('click', function (e) {
+        playBtn.addEventListener('click', function(e) {
           e.stopPropagation();
           playVideo();
         });
       }
 
-      overlay.addEventListener('click', function (e) {
+      overlay.addEventListener('click', function(e) {
         if (e.target.closest('.play-big') || e.target === overlay) {
           playVideo();
         }
       });
 
-      video.addEventListener('play', function () {
+      video.addEventListener('play', function() {
         overlay.classList.add('hidden');
         setupAudio();
       });
 
-      video.addEventListener('pause', function () {
+      video.addEventListener('pause', function() {
         overlay.classList.remove('hidden');
       });
 
-      video.addEventListener('ended', function () {
+      video.addEventListener('ended', function() {
         overlay.classList.remove('hidden');
         video.currentTime = 0;
       });
 
-      document.querySelector('a[href="#video"]')?.addEventListener('click', function (e) {
+      document.querySelector('a[href="#video"]')?.addEventListener('click', function(e) {
         e.preventDefault();
         document.getElementById('video').scrollIntoView({ behavior: 'smooth', block: 'start' });
-        setTimeout(function () {
+        setTimeout(function() {
           if (video && video.paused) {
             playVideo();
           }
         }, 800);
       });
 
-      document.addEventListener('visibilitychange', function () {
+      document.addEventListener('visibilitychange', function() {
         if (document.hidden && !video.paused) {
           video.pause();
         }
@@ -364,7 +366,7 @@
 
       document.addEventListener('click', setupAudio, { once: true });
 
-      video.addEventListener('volumechange', function () {
+      video.addEventListener('volumechange', function() {
         console.log('📊 Volume changed to:', video.volume);
       });
 
@@ -394,14 +396,10 @@
           }
         }
 
-        // Update immediately on load
         updateTimer();
-
-        // Update every second
         setInterval(updateTimer, 1000);
       }
 
-      // Initialize timer when DOM is ready
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initCountdownTimer);
       } else {
