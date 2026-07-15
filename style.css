@@ -509,6 +509,56 @@ a {
   margin-right: 6px;
 }
 
+/* ============ SOCIAL PROOF STATS ============ */
+.social-proof {
+  margin: 40px 0 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.proof-content {
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.15), rgba(255, 193, 7, 0.05));
+  border: 2px solid rgba(255, 193, 7, 0.4);
+  border-radius: 20px;
+  padding: 28px 32px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 40px rgba(255, 193, 7, 0.2);
+  animation: proofGlow 3s ease-in-out infinite;
+}
+
+@keyframes proofGlow {
+  0%, 100% { box-shadow: 0 0 40px rgba(255, 193, 7, 0.2); }
+  50% { box-shadow: 0 0 60px rgba(255, 193, 7, 0.35); }
+}
+
+.proof-content i {
+  font-size: 1.8rem;
+  color: #ff6b6b;
+  margin-bottom: 12px;
+  display: block;
+  animation: fireFlicker 2s ease-in-out infinite;
+}
+
+@keyframes fireFlicker {
+  0%, 100% { transform: scale(1); color: #ff6b6b; }
+  50% { transform: scale(1.1); color: #ffc107; }
+}
+
+.proof-content h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffc107;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.proof-content p {
+  font-size: 1rem;
+  color: #b0c4ff;
+  font-weight: 500;
+}
+
 /* ============ LEARNING SECTION ============ */
 .learning-section {
   margin: 60px 0 50px;
@@ -948,6 +998,18 @@ a {
     max-width: 400px;
   }
 
+  .proof-content {
+    padding: 20px 24px;
+  }
+
+  .proof-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .proof-content p {
+    font-size: 0.9rem;
+  }
+
   .learning-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1077,6 +1139,22 @@ a {
     margin: 0 1px;
   }
 
+  .proof-content {
+    padding: 16px;
+  }
+
+  .proof-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .proof-content p {
+    font-size: 0.85rem;
+  }
+
+  .proof-content i {
+    font-size: 1.5rem;
+  }
+
   .learning-grid {
     grid-template-columns: 1fr;
   }
@@ -1143,8 +1221,8 @@ a {
   }
 
   .video-container {
-    padding-top: 200%;
-    max-width: 550px;
+    padding-top: 150%;
+    max-width: 500px;
   }
 
   .learning-grid {
@@ -1171,5 +1249,29 @@ a {
 
   .price-box {
     padding: 32px 64px;
+  }
+
+  .video-container {
+    padding-top: 140%;
+    max-width: 480px;
+  }
+
+  .proof-content {
+    padding: 32px 40px;
+  }
+
+  .proof-content h3 {
+    font-size: 1.6rem;
+  }
+
+  .proof-content p {
+    font-size: 1.05rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .video-container {
+    padding-top: 130%;
+    max-width: 450px;
   }
 }
