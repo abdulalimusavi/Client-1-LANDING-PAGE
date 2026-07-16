@@ -1075,6 +1075,104 @@ a {
   color: #fff;
 }
 
+/* ==============================================================
+   ========== STYLED IMAGE SECTION – fully responsive ==========
+   ============================================================== */
+.image-section .image-card {
+  background: linear-gradient(135deg, rgba(26, 38, 85, 0.5), rgba(10, 14, 39, 0.5));
+  border-color: rgba(255, 193, 7, 0.25);
+  text-align: center;
+}
+
+.image-section .image-card:hover {
+  border-color: rgba(255, 193, 7, 0.4);
+  background: linear-gradient(135deg, rgba(26, 38, 85, 0.6), rgba(10, 14, 39, 0.6));
+}
+
+.image-badge {
+  display: inline-block;
+  background: rgba(255, 193, 7, 0.15);
+  padding: 4px 18px;
+  border-radius: 40px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffc107;
+  border: 1px solid rgba(255, 193, 7, 0.25);
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.image-section .image-card h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 6px;
+  display: block;
+  text-align: center;
+}
+
+.image-section .image-card h3 .gold-text {
+  color: #ffc107;
+  text-shadow: 0 0 30px rgba(255, 193, 7, 0.2);
+}
+
+.image-sub {
+  color: #b0c4ff;
+  max-width: 600px;
+  margin: 0 auto 20px;
+  font-size: 1rem;
+}
+
+.image-sub strong {
+  color: #ffc107;
+}
+
+.image-wrapper {
+  max-width: 700px;
+  margin: 0 auto 16px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 193, 7, 0.2);
+  box-shadow: 0 0 40px rgba(255, 193, 7, 0.08);
+  transition: all 0.4s ease;
+}
+
+.image-wrapper:hover {
+  border-color: rgba(255, 193, 7, 0.4);
+  box-shadow: 0 0 60px rgba(255, 193, 7, 0.15);
+}
+
+.responsive-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.image-wrapper:hover .responsive-img {
+  transform: scale(1.02);
+}
+
+.image-caption {
+  font-style: italic;
+  color: #a0aeff;
+  border-top: 1px solid rgba(255, 193, 7, 0.15);
+  padding-top: 16px;
+  margin-top: 8px;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.image-caption i {
+  color: #ffc107;
+  font-size: 1.2rem;
+}
+
 /* ============ PACKAGES SECTION ============ */
 .packages-section {
   margin: 50px 0 40px;
@@ -1661,6 +1759,22 @@ a {
   .confidence-steps .step { font-size: 0.8rem; padding: 6px 12px; }
   .confidence-steps .step .step-num { width: 24px; height: 24px; font-size: 0.7rem; }
   .confidence-badge { font-size: 1rem; padding: 6px 16px; }
+
+  /* Image section responsive */
+  .image-section .image-card h3 {
+    font-size: 1.3rem;
+  }
+  .image-sub {
+    font-size: 0.9rem;
+  }
+  .image-wrapper {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+  .image-caption {
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1715,6 +1829,32 @@ a {
   .confidence-steps { flex-direction: column; gap: 6px; }
   .confidence-steps .step-arrow { transform: rotate(90deg); }
   .confidence-badge { font-size: 0.9rem; flex-wrap: wrap; justify-content: center; }
+
+  /* Image section responsive small */
+  .image-section .image-card {
+    padding: 18px 16px;
+  }
+  .image-section .image-card h3 {
+    font-size: 1.1rem;
+  }
+  .image-sub {
+    font-size: 0.85rem;
+  }
+  .image-wrapper {
+    border-radius: 10px;
+    border-width: 1.5px;
+  }
+  .image-caption {
+    font-size: 0.8rem;
+    padding-top: 12px;
+  }
+  .image-caption i {
+    font-size: 1rem;
+  }
+  .image-badge {
+    font-size: 0.65rem;
+    padding: 3px 14px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -1734,8 +1874,11 @@ a {
   .proof-content p { font-size: 1.05rem; }
   .packages-section { padding: 0 20px; }
   .poster-card { padding: 40px 36px; }
+  .image-section .image-card { padding: 40px 36px; }
+  .image-wrapper { max-width: 750px; }
 }
 
 @media (min-width: 1400px) {
   .video-container { padding-top: 130%; max-width: 450px; }
+  .image-wrapper { max-width: 800px; }
 }
