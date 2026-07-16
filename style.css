@@ -255,6 +255,20 @@ a {
   50%, 99% { opacity: 0.3; }
 }
 
+.timer-notice {
+  font-size: 0.85rem;
+  color: #b0c4ff;
+  background: rgba(255, 193, 7, 0.12);
+  padding: 10px 20px;
+  border-radius: 40px;
+  border: 1px dashed rgba(255, 193, 7, 0.3);
+  margin-top: 6px;
+}
+
+.timer-notice strong {
+  color: #ffc107;
+}
+
 /* ============ BUTTONS ============ */
 .cta-group {
   display: flex;
@@ -541,7 +555,65 @@ a {
   flex: 1;
 }
 
-/* ——— BOOK SESSION BUTTON on learning cards ——— */
+/* Price badges on learning cards */
+.price-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 14px;
+  background: rgba(255, 193, 7, 0.06);
+  padding: 6px 14px;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 193, 7, 0.2);
+}
+
+.price-original {
+  font-size: 0.75rem;
+  color: #8a9bff;
+  text-decoration: line-through;
+}
+
+.price-discount {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.15);
+  padding: 2px 10px;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.price-final {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #ffc107;
+}
+
+/* Session deadline notice */
+.session-deadline {
+  margin-top: 28px;
+  text-align: center;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.10), rgba(255, 193, 7, 0.03));
+  border: 1px solid rgba(255, 193, 7, 0.25);
+  border-radius: 60px;
+  font-size: 0.95rem;
+  color: #b0c4ff;
+}
+
+.session-deadline .highlight {
+  color: #ffc107;
+  font-weight: 800;
+}
+
+.session-deadline i {
+  color: #ffc107;
+  margin-right: 8px;
+}
+
+/* ——— BOOK SESSION button on learning cards ——— */
 .btn-book {
   display: inline-flex;
   align-items: center;
@@ -654,6 +726,146 @@ a {
   line-height: 1.6;
 }
 
+.feature-price-tag {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ffc107;
+  background: rgba(255, 193, 7, 0.12);
+  padding: 4px 18px;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 193, 7, 0.2);
+}
+
+/* ============ KEY POINTS (4 points before About) ============ */
+.key-points {
+  margin: 50px 0 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.key-points-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.key-point {
+  background: linear-gradient(135deg, rgba(26, 38, 85, 0.35), rgba(10, 14, 39, 0.35));
+  border: 1px solid rgba(255, 193, 7, 0.15);
+  border-radius: 16px;
+  padding: 24px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.key-point:hover {
+  border-color: rgba(255, 193, 7, 0.4);
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, rgba(26, 38, 85, 0.5), rgba(10, 14, 39, 0.5));
+}
+
+.key-point .kp-icon {
+  font-size: 2.5rem;
+  color: #ffc107;
+  margin-bottom: 12px;
+}
+
+.key-point h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.key-point p {
+  font-size: 0.9rem;
+  color: #a0aeff;
+}
+
+/* ============ CONFIDENCE BUILD-UP SHOWCASE ============ */
+.confidence-showcase {
+  margin: 40px 0 50px;
+  padding: 28px 24px;
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.08), rgba(255, 193, 7, 0.02));
+  border: 1px solid rgba(255, 193, 7, 0.2);
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.confidence-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #ffc107;
+  margin-bottom: 20px;
+  background: rgba(255, 193, 7, 0.08);
+  padding: 8px 24px;
+  border-radius: 60px;
+  border: 1px solid rgba(255, 193, 7, 0.25);
+}
+
+.confidence-badge i {
+  font-size: 1.6rem;
+}
+
+.confidence-sub {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #8a9bff;
+}
+
+.confidence-steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px 16px;
+}
+
+.confidence-steps .step {
+  font-weight: 700;
+  color: #b0c4ff;
+  padding: 8px 16px;
+  background: rgba(26, 38, 85, 0.3);
+  border-radius: 40px;
+  border: 1px solid rgba(255, 193, 7, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+.confidence-steps .step .step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 193, 7, 0.15);
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: #ffc107;
+}
+
+.confidence-steps .highlight-step {
+  background: rgba(255, 193, 7, 0.15);
+  border-color: rgba(255, 193, 7, 0.4);
+  color: #ffc107;
+}
+
+.confidence-steps .step-arrow {
+  color: #ffc107;
+  font-size: 1.2rem;
+  opacity: 0.5;
+}
+
 /* ============ ABOUT SECTION ============ */
 .about-section {
   margin: 60px 0 30px;
@@ -740,7 +952,7 @@ a {
 
 .programs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 16px;
 }
 
@@ -768,6 +980,99 @@ a {
 .program-item i {
   font-size: 1.8rem;
   color: #ffc107;
+}
+
+/* ============ POSTER SECTIONS (Company Overview, Flagship, What You'll Learn) ============ */
+.poster-section {
+  margin: 30px 0 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.poster-card {
+  background: linear-gradient(135deg, rgba(26, 38, 85, 0.35), rgba(10, 14, 39, 0.35));
+  border: 1px solid rgba(255, 193, 7, 0.15);
+  border-radius: 20px;
+  padding: 32px 28px;
+  transition: all 0.3s ease;
+}
+
+.poster-card:hover {
+  border-color: rgba(255, 193, 7, 0.3);
+  background: linear-gradient(135deg, rgba(26, 38, 85, 0.5), rgba(10, 14, 39, 0.5));
+}
+
+.poster-card h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.poster-card h3 i {
+  color: #ffc107;
+}
+
+.poster-card p {
+  color: #b0c4ff;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.poster-card strong {
+  color: #ffc107;
+}
+
+.flagship-badge {
+  display: inline-block;
+  background: rgba(255, 193, 7, 0.15);
+  padding: 4px 18px;
+  border-radius: 40px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #ffc107;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  margin-bottom: 14px;
+}
+
+.flagship-tagline {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffc107;
+  margin-bottom: 12px;
+}
+
+.featured-card {
+  border-color: rgba(255, 193, 7, 0.35);
+  box-shadow: 0 0 30px rgba(255, 193, 7, 0.08);
+}
+
+.learn-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.learn-tag {
+  background: rgba(255, 193, 7, 0.06);
+  border: 1px solid rgba(255, 193, 7, 0.15);
+  border-radius: 40px;
+  padding: 8px 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #b0c4ff;
+  transition: all 0.3s ease;
+}
+
+.learn-tag:hover {
+  background: rgba(255, 193, 7, 0.12);
+  border-color: rgba(255, 193, 7, 0.35);
+  color: #fff;
 }
 
 /* ============ PACKAGES SECTION ============ */
@@ -849,6 +1154,55 @@ a {
   opacity: 1;
 }
 
+/* Tier-based styling: higher price = more glow & premium look */
+.tier-starter {
+  border-color: rgba(255, 193, 7, 0.2);
+}
+.tier-starter .pkg-price {
+  color: #8a9bff;
+}
+
+.tier-professional {
+  border-color: rgba(255, 193, 7, 0.4);
+  box-shadow: 0 0 30px rgba(255, 193, 7, 0.08);
+}
+.tier-professional .pkg-price {
+  color: #ffc107;
+}
+
+.tier-executive {
+  border-color: rgba(255, 215, 0, 0.5);
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.12);
+}
+.tier-executive .pkg-price {
+  color: #ffd700;
+}
+.tier-executive .pkg-icon {
+  color: #ffd700;
+}
+
+.tier-elite {
+  border-color: rgba(255, 215, 0, 0.7);
+  box-shadow: 0 0 60px rgba(255, 215, 0, 0.2);
+  background: linear-gradient(145deg, rgba(40, 30, 10, 0.6), rgba(10, 14, 39, 0.6));
+}
+.tier-elite .pkg-price {
+  color: #ffd700;
+  text-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
+}
+.tier-elite .pkg-icon {
+  color: #ffd700;
+  filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
+}
+.tier-elite .pkg-badge {
+  background: rgba(255, 215, 0, 0.2);
+  border-color: rgba(255, 215, 0, 0.4);
+  color: #ffd700;
+}
+.tier-elite .btn-pkg {
+  background: linear-gradient(135deg, #ffd700, #ffb300);
+}
+
 .package-card .pkg-badge {
   font-size: 0.65rem;
   font-weight: 800;
@@ -893,7 +1247,6 @@ a {
 .package-card .pkg-price {
   font-size: 2.4rem;
   font-weight: 900;
-  color: #ffc107;
   text-shadow: 0 0 30px rgba(255, 193, 7, 0.2);
   margin-bottom: 20px;
 }
@@ -1263,6 +1616,7 @@ a {
   .hero-timer-wrapper .countdown-number { font-size: 1.5rem; min-width: 50px; padding: 6px 8px; }
   .hero-timer-wrapper .countdown-label-small { font-size: 0.6rem; }
   .hero-timer-wrapper .countdown-separator { font-size: 1.2rem; }
+  .timer-notice { font-size: 0.75rem; padding: 8px 14px; }
   .btn-primary, .btn-secondary { width: 100%; padding: 14px 24px; }
   .cta-group { flex-direction: column; width: 100%; }
   .play-big { width: 80px; height: 80px; font-size: 2.5rem; }
@@ -1271,8 +1625,10 @@ a {
   .proof-content h3 { font-size: 1.3rem; }
   .proof-content p { font-size: 0.9rem; }
   .learning-grid { grid-template-columns: 1fr 1fr; }
+  .learning-section h2 { font-size: 1.8rem; }
   .features { grid-template-columns: 1fr 1fr; gap: 16px; }
   .feature { padding: 24px 16px; }
+  .key-points-grid { grid-template-columns: 1fr 1fr; }
   .guarantees { flex-direction: column; gap: 12px; }
   .guarantee { width: 100%; justify-content: center; }
   .event-box { flex-direction: column; gap: 12px; padding: 20px 24px; }
@@ -1297,6 +1653,14 @@ a {
   .payment-method { padding: 12px 18px; min-width: 120px; }
   .payment-method i { font-size: 1.5rem; }
   .float-wa a { width: 60px; height: 60px; font-size: 2.2rem; }
+  .poster-card { padding: 24px 20px; }
+  .poster-card h3 { font-size: 1.3rem; }
+  .learn-grid { gap: 8px; }
+  .learn-tag { font-size: 0.75rem; padding: 6px 14px; }
+  .confidence-steps { gap: 6px 10px; }
+  .confidence-steps .step { font-size: 0.8rem; padding: 6px 12px; }
+  .confidence-steps .step .step-num { width: 24px; height: 24px; font-size: 0.7rem; }
+  .confidence-badge { font-size: 1rem; padding: 6px 16px; }
 }
 
 @media (max-width: 480px) {
@@ -1312,13 +1676,16 @@ a {
   .hero-timer-wrapper .countdown-number { font-size: 1.3rem; min-width: 45px; padding: 4px 6px; }
   .hero-timer-wrapper .countdown-label-small { font-size: 0.55rem; }
   .hero-timer-wrapper .countdown-separator { font-size: 1rem; margin: 0 1px; }
+  .timer-notice { font-size: 0.7rem; padding: 6px 12px; }
   .proof-content { padding: 16px; }
   .proof-content h3 { font-size: 1.1rem; }
   .proof-content p { font-size: 0.85rem; }
   .proof-content i { font-size: 1.5rem; }
   .learning-grid { grid-template-columns: 1fr; }
+  .learning-section h2 { font-size: 1.5rem; }
   .features { grid-template-columns: 1fr; gap: 12px; }
   .feature { padding: 20px 12px; }
+  .key-points-grid { grid-template-columns: 1fr; }
   .video-note { font-size: 0.75rem; }
   .event-item { font-size: 0.9rem; }
   .about-section { padding: 16px; margin: 40px 0 30px; }
@@ -1341,6 +1708,13 @@ a {
   .payment-note p { font-size: 0.85rem; }
   .float-wa { bottom: 20px; right: 20px; }
   .float-wa a { width: 56px; height: 56px; font-size: 2rem; }
+  .poster-card { padding: 18px 16px; }
+  .poster-card h3 { font-size: 1.1rem; }
+  .learn-tag { font-size: 0.7rem; padding: 4px 12px; }
+  .flagship-tagline { font-size: 0.95rem; }
+  .confidence-steps { flex-direction: column; gap: 6px; }
+  .confidence-steps .step-arrow { transform: rotate(90deg); }
+  .confidence-badge { font-size: 0.9rem; flex-wrap: wrap; justify-content: center; }
 }
 
 @media (min-width: 1024px) {
@@ -1359,6 +1733,7 @@ a {
   .proof-content h3 { font-size: 1.6rem; }
   .proof-content p { font-size: 1.05rem; }
   .packages-section { padding: 0 20px; }
+  .poster-card { padding: 40px 36px; }
 }
 
 @media (min-width: 1400px) {
