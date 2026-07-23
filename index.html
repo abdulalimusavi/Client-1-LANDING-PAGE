@@ -15,9 +15,12 @@
 </head>
 <body>
 
-    <!-- Background -->
+    <!-- ========== BACKGROUND LAYERS (NEW) ========== -->
     <div class="bg-gradient"></div>
     <div class="bg-grid"></div>
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+    <div class="bg-glow-3"></div>
 
     <main class="container">
 
@@ -28,37 +31,6 @@
             <p class="sub-headline">
                 <i class="fas fa-exclamation-circle"></i> Boost confidence. Crack presentations. Master interviews.
             </p>
-
-            <!-- COUNTDOWN TIMER -->
-            <div class="hero-timer-wrapper">
-                <div class="countdown-label">
-                    <i class="fas fa-hourglass-end"></i> OFFER ENDS IN
-                </div>
-                <div class="countdown-timer" id="countdownTimer">
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="days">0</div>
-                        <div class="countdown-label-small">DAYS</div>
-                    </div>
-                    <div class="countdown-separator">:</div>
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="hours">0</div>
-                        <div class="countdown-label-small">HOURS</div>
-                    </div>
-                    <div class="countdown-separator">:</div>
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="minutes">0</div>
-                        <div class="countdown-label-small">MINS</div>
-                    </div>
-                    <div class="countdown-separator">:</div>
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="seconds">0</div>
-                        <div class="countdown-label-small">SECS</div>
-                    </div>
-                </div>
-                <div class="timer-notice">
-                    <i class="fas fa-clock"></i> Pay just <strong>₨ 500</strong> to lock your seat — valid till <strong>19 July</strong>!
-                </div>
-            </div>
 
             <!-- CTA -->
             <div class="cta-group">
@@ -310,7 +282,7 @@
     </main>
 
     <!-- ============================================================
-    JAVASCRIPT — VIDEO + AUDIO + TIMER + SCROLL TO PAYMENT
+    JAVASCRIPT — VIDEO + AUDIO + SCROLL TO PAYMENT
     ============================================================ -->
     <script>
         (function() {
@@ -382,42 +354,6 @@
             });
 
             document.addEventListener('click', setupAudio, { once: true });
-
-            // ========== COUNTDOWN TIMER ==========
-            function initCountdownTimer() {
-                var targetDate = new Date(2026, 6, 19, 0, 0, 0).getTime();
-
-                function updateTimer() {
-                    var now = new Date().getTime();
-                    var diff = targetDate - now;
-
-                    if (diff > 0) {
-                        var days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                        var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                        var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                        var seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-                        document.getElementById('days').textContent = String(days).padStart(2, '0');
-                        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-                        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-                        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-                    } else {
-                        document.getElementById('days').textContent = '00';
-                        document.getElementById('hours').textContent = '00';
-                        document.getElementById('minutes').textContent = '00';
-                        document.getElementById('seconds').textContent = '00';
-                    }
-                }
-
-                updateTimer();
-                setInterval(updateTimer, 1000);
-            }
-
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initCountdownTimer);
-            } else {
-                initCountdownTimer();
-            }
 
             // ========== SCROLL TO PAYMENT ==========
             var paymentSection = document.getElementById('paymentSection');
