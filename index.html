@@ -10,12 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <!-- Separate CSS file -->
+    <!-- ===== SEPARATE CSS FILE ===== -->
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <!-- ========== BACKGROUND LAYERS (NEW) ========== -->
+    <!-- ========== BACKGROUND LAYERS ========== -->
     <div class="bg-gradient"></div>
     <div class="bg-grid"></div>
     <div class="bg-glow-1"></div>
@@ -31,6 +31,30 @@
             <p class="sub-headline">
                 <i class="fas fa-exclamation-circle"></i> Boost confidence. Crack presentations. Master interviews.
             </p>
+
+            <!-- HERO IMAGE WITH CINEMATIC FRAME -->
+            <div class="hero-image-wrapper">
+                <div class="hero-image-frame">
+                    <div class="frame-outer">
+                        <div class="frame-inner">
+                            <img src="11451.jpg" alt="Dr. Javeria Shabbir – Speak with Confidence" />
+                            <div class="corner corner-tl"></div>
+                            <div class="corner corner-tr"></div>
+                            <div class="corner corner-bl"></div>
+                            <div class="corner corner-br"></div>
+                            <div class="accent-bar top"></div>
+                            <div class="accent-bar bottom"></div>
+                        </div>
+                    </div>
+                    <div class="frame-glow"></div>
+                </div>
+                <div class="hero-image-caption">
+                    <span class="caption-line"></span>
+                    <span class="caption-text">Dr. Javeria Shabbir</span>
+                    <span class="caption-sub">Public Speaking &amp; Leadership Coach</span>
+                    <span class="caption-line"></span>
+                </div>
+            </div>
 
             <!-- CTA -->
             <div class="cta-group">
@@ -139,10 +163,9 @@
         <!-- ========== ABOUT + INSTRUCTOR ========== -->
         <section class="about-section">
             <h2>About BrandFix360</h2>
-            <p>BrandFix360 is a training &amp; consulting company specializing in <strong>Public Speaking, Leadership, Emotional Intelligence &amp; Communication</strong>. We transform how professionals and entrepreneurs connect, influence and lead.</p>
+            <p>BrandFix360 is a  &amp; consulting company specializing in personal branding , Personal branding could be for product and personal brand etc and  <strong>Public Speaking, Leadership, Emotional Intelligence &amp; Communication</strong>. We transform how professionals and entrepreneurs connect, influence and lead.</p>
             <p>Whether you're a student preparing for interviews, a professional seeking leadership impact, or an organization needing team training — we deliver proven, practical strategies that get results.</p>
 
-            <!-- Instructor -->
             <div class="about-instructor">
                 <div class="instructor-avatar">JS</div>
                 <div class="instructor-info">
@@ -173,7 +196,6 @@
             <p class="packages-sub">Pick the plan that fits your goals — from students to executives.</p>
 
             <div class="packages-grid">
-                <!-- Starter -->
                 <div class="package-card">
                     <div class="pkg-badge">STARTER</div>
                     <div class="pkg-icon"><i class="fas fa-user-graduate"></i></div>
@@ -186,7 +208,6 @@
                     </button>
                 </div>
 
-                <!-- Professional -->
                 <div class="package-card featured">
                     <div class="pkg-badge">PROFESSIONAL</div>
                     <div class="pkg-icon"><i class="fas fa-briefcase"></i></div>
@@ -199,7 +220,6 @@
                     </button>
                 </div>
 
-                <!-- Executive -->
                 <div class="package-card">
                     <div class="pkg-badge">EXECUTIVE</div>
                     <div class="pkg-icon"><i class="fas fa-users-cog"></i></div>
@@ -282,7 +302,7 @@
     </main>
 
     <!-- ============================================================
-    JAVASCRIPT — VIDEO + AUDIO + SCROLL TO PAYMENT
+    JAVASCRIPT — VIDEO + AUDIO + SCROLL TO PAYMENT (combined in HTML)
     ============================================================ -->
     <script>
         (function() {
@@ -370,17 +390,14 @@
                 }
             }
 
-            // Book buttons
             document.querySelectorAll('.btn-book[data-target="paymentSection"]').forEach(function(btn) {
                 btn.addEventListener('click', scrollToPayment);
             });
 
-            // Package buttons
             document.querySelectorAll('.btn-pkg[data-target="paymentSection"]').forEach(function(btn) {
                 btn.addEventListener('click', scrollToPayment);
             });
 
-            // Payment method cards → highlight
             document.querySelectorAll('.payment-method').forEach(function(method) {
                 method.style.cursor = 'pointer';
                 method.addEventListener('click', function() {
